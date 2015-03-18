@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150318065959) do
 
   create_table "glances", force: :cascade do |t|
     t.string   "image_address"
+    t.text     "description"
     t.integer  "position"
     t.integer  "video_id"
     t.datetime "created_at"
