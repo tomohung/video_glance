@@ -7,16 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-cat_kochi = Category.create(title: 'Kochikame', description: 'Fun cartoon ever!!')
 cat_walking = Category.create(title: 'The Walking Dead', description: 'Zombies everywhere...')
 
-(1..10).each do |index|
-  video = Video.create(title: 'Kochikame #{index}', category: cat_kochi)
-  Glance.create(position: index, image_address: 'test #{index}')
-end
-
 (1..9).each do |index|
-  video = Video.create(title: 'The Walking Dead #{index}', category: cat_walking)
-  Glance.create(position: index, image_address: 'test #{index}')
+  video = Video.create(title: 'The Walking Dead Episode #{index}', category: cat_walking)
+  (1..20).each do |g_index|
+    image_path = '/the_walking_dead/#{g_index}.jpg'
+    Glance.create(position: g_index, image_address: image_path)
+  end
 end
 
